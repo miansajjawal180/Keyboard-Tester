@@ -1,0 +1,101 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(250,0,0);
+background: linear-gradient(90deg, rgba(250,0,0,1) 0%, rgba(0,0,0,0.6558998599439776) 50%, rgba(25,238,0,1) 100%);
+    font-family: Arial, sans-serif;
+    background: url(keyboard.jpg);
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+}
+h1 sub{
+    font-size: 0.85rem;
+}
+/** Animated key for the text on the top **/
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-heading {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #30f100;
+    background-color: red;
+    animation: slideIn 5s ease-out; /* Adjust duration and easing as needed */
+}
+.key-row {
+    display: flex;
+    gap: 5px;
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.key.active {
+  
+    border: 2px solid rgb(255, 6, 6);
+}
+
+/** keyboard button width **/
+.key.wide[data-key="space"] {
+    width: 287px;
+}
+.key.wide.shiftleft{
+    width: 138px;
+}
+.key.wide[data-key="enter"] {
+    width: 148px;
+}
+.key.wide[data-key="backspace"]{
+    width:138px;
+}
+.key.wide[data-key="tab"]{
+    width: 138px;
+}
+.key.topdown[data-key="arrowtop"]{
+    height: 25px;
+}
+.key.topdown[data-key="arrowdown"]{
+    height: 25px;
+}
+.key.wide[data-key="capslock"]{
+    width: 80px;
+}
+.key-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Gap between arrow keys */
+    align-items: center; /* Center align items horizontally */
+    height: 25px;
+}
